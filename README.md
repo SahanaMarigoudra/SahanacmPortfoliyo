@@ -33,26 +33,3 @@ Feel free to reach out if you have an opportunity or a project idea!
 ---
 
 *“Crafting high-quality software that makes workflows simpler, load faster, and perform flawlessly.”*
-
-## Getting Started
-
-To run this project locally:
-
-`ash
-# Install dependencies
-npm install
-
-# Run the development server
-npm run dev
-`
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Security
-
-- No secrets should be committed to this repository.
-- Local environment variables should be stored in .env files.
-- Real .env files are excluded through .gitignore.
-- Frontend NEXT_PUBLIC_* variables are public and must not contain private secrets.
-- Private API credentials must remain server-side.
-- Dependency security should be checked regularly.
