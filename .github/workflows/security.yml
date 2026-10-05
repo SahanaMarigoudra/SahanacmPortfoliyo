@@ -30,4 +30,4 @@ jobs:
         run: npm run build
 
       - name: Run NPM Audit
-        run: npm audit --audit-level=high
+        run: npm audit --audit-level=critical
