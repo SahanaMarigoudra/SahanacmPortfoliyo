@@ -27,7 +27,7 @@
         "@types/react-dom": "^19",
         "eslint": "^9",
         "tailwindcss": "^4",
-        "typescript": "^5"
+        "typescript": "^7"
     },
     "overrides": {
         "micromatch": ">=4.0.8",
