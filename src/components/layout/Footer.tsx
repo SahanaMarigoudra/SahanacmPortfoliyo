@@ -15,14 +15,14 @@ export function Footer() {
         </div>
         
         <div className="flex gap-6">
-          <Link href={portfolioData.personalInfo.github} target="_blank" className="text-muted hover:text-foreground transition-colors">
+          <Link href={portfolioData.personalInfo.github} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-foreground transition-colors">
             <GithubIcon size={20} />
           </Link>
-          <Link href={portfolioData.personalInfo.linkedin} target="_blank" className="text-muted hover:text-foreground transition-colors">
+          <Link href={portfolioData.personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-foreground transition-colors">
             <LinkedinIcon size={20} />
           </Link>
           {portfolioData.personalInfo.leetcode && (
-            <Link href={portfolioData.personalInfo.leetcode} target="_blank" className="text-muted hover:text-foreground transition-colors">
+            <Link href={portfolioData.personalInfo.leetcode} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-foreground transition-colors">
               <Code size={20} />
             </Link>
           )}

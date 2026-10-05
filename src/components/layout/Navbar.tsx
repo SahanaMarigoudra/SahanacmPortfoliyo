@@ -84,7 +84,7 @@ export function Navbar() {
         <div className="hidden lg:flex items-center gap-3">
           <Link
             href={portfolioData.personalInfo.linkedin}
-            target="_blank"
+            target="_blank" rel="noopener noreferrer"
             className="flex items-center justify-center w-9 h-9 rounded-full transition-all duration-200"
             style={{
               background: "rgba(10,22,40,0.7)",
@@ -106,7 +106,7 @@ export function Navbar() {
           </Link>
           <Link
             href={portfolioData.personalInfo.github}
-            target="_blank"
+            target="_blank" rel="noopener noreferrer"
             className="flex items-center justify-center w-9 h-9 rounded-full transition-all duration-200"
             style={{
               background: "rgba(10,22,40,0.7)",

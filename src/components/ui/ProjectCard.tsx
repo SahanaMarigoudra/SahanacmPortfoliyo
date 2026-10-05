@@ -651,7 +651,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
             {project.github && (
               <Link
                 href={project.github}
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-2 px-5 py-2.5 rounded-full text-[clamp(14px,1.5vw,15px)] font-[600] transition-all duration-200"
                 style={{
                   background: "rgba(10,22,40,0.8)",
@@ -680,7 +680,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
             {project.liveDemo && (
               <Link
                 href={project.liveDemo}
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold text-white transition-all duration-200"
                 style={{
                   background: "linear-gradient(90deg,#a855f7 0%,#6366f1 50%,#06b6d4 100%)",
