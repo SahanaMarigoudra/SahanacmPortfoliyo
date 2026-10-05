@@ -16,10 +16,23 @@ This portfolio is built with a focus on high-quality aesthetics, responsiveness,
 
 ## 🛠 Tech Stack
 
-*   **Framework**: Next.js (React)
-*   **Styling**: Tailwind CSS
-*   **Animations**: Framer Motion
-*   **Icons**: Lucide React & React Icons
+*   **Framework**: [Next.js](https://nextjs.org/) + [React](https://react.dev/)
+*   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+*   **Animations**: [Framer Motion](https://www.framer.com/motion/)
+*   **Icons**: [Lucide React](https://lucide.dev/) & [React Icons](https://react-icons.github.io/react-icons/)
+*   **Deployment**: Configured for rapid static deployment on Vercel.
+
+## 📬 Contact
+
+*   **Email**: [sahanacm.mca@gmail.com](mailto:sahanacm.mca@gmail.com)
+*   **LinkedIn**: [Sahana Marigoudra](https://www.linkedin.com/in/sahana-marigoudra-359648354)
+*   **GitHub**: [@SahanaMarigoudra](https://github.com/SahanaMarigoudra)
+
+Feel free to reach out if you have an opportunity or a project idea!
+
+---
+
+*“Crafting high-quality software that makes workflows simpler, load faster, and perform flawlessly.”*
 
 ## Getting Started
 
