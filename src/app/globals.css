@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+:root {
+  /* Deep Dark Navy Theme — matches reference portfolio */
+  --background: #050B1D;
+  --foreground: #F5F7FF;
+  --accent: #a855f7;        /* Purple */
+  --accent-mid: #6366f1;    /* Indigo */
+  --accent-light: #06b6d4;  /* Cyan */
+  --muted: #A8B5D0;
+  --border: #1a2744;
+  --card: #0A1628;
+  --card-hover: #0E1E35;
+}
+
+/* No separate .dark class — dark IS the default theme */
+
+@theme inline {
+  --font-sans: var(--font-inter), "Poppins", sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-card: var(--card);
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), 'Inter', 'Poppins', sans-serif;
+  overflow-x: hidden;
+  /* Subtle deep navy gradient on the body itself */
+  background-image: radial-gradient(ellipse 80% 60% at 50% -10%, #07183A 0%, transparent 60%),
+                    radial-gradient(ellipse 60% 40% at 100% 50%, #0B1A3A 0%, transparent 50%),
+                    radial-gradient(ellipse 50% 50% at 0% 80%, #060E2A 0%, transparent 50%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060B1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e2f55;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a855f7;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.text-reveal-wrapper {
+  overflow: hidden;
+}
+
+.clip-text {
+  background: linear-gradient(135deg, var(--foreground) 0%, var(--muted) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(90deg, #a855f7 0%, #6366f1 45%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass card utility */
+.glass-card {
+  background: rgba(10, 22, 40, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.05), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+/* ── Infinite marquee scroll animation ── */
+@keyframes marquee-ltr {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee-ltr linear infinite;
+  will-change: transform;
+}
+
+/* Pause the whole row when hovering anywhere inside the scroll viewport */
+.marquee-viewport:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* ==================================================
+   INTERACTIVE CURSOR-FOLLOWING CARD GLOW EFFECT
+   ================================================== */
+.glow-card {
+  position: relative;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* For non-touch devices, enable the cursor effect */
+@media (hover: hover) and (pointer: fine) {
+  /* Subtle lift on hover */
+  .glow-card:hover {
+    transform: translateY(-3px);
+  }
+
+  /* When cursor enters, do a subtle pulse animation */
+  @keyframes glow-pulse {
+    0% { opacity: 0.3; }
+    30% { opacity: 1; }
+    100% { opacity: 0.8; }
+  }
+
+  /* Inner Glow */
+  .glow-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    /* Soft cyan + purple radial gradient following the cursor */
+    background: radial-gradient(
+      200px circle at var(--mouse-x, 0) var(--mouse-y, 0),
+      rgba(6, 182, 212, 0.1),
+      rgba(168, 85, 247, 0.05),
+      transparent 70%
+    );
+    opacity: 0;
+    z-index: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .glow-card:hover::before {
+    opacity: 0.8;
+    animation: glow-pulse 1.4s ease-in-out forwards;
+  }
+
+  /* Border / Outer Glow */
+  .glow-card::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: radial-gradient(
+      250px circle at var(--mouse-x, 0) var(--mouse-y, 0),
+      rgba(6, 182, 212, 0.25),
+      rgba(168, 85, 247, 0.15),
+      transparent 50%
+    );
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .glow-card:hover::after {
+    opacity: 0.8;
+    animation: glow-pulse 1.4s ease-in-out forwards;
+  }
+}
+
