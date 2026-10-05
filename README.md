@@ -2,7 +2,7 @@
 
 Welcome to my personal portfolio repository! I'm an MCA Student & Aspiring Software Developer focused on building reliable, practical applications with modern web technologies. This repository contains the source code for my interactive portfolio, designed to showcase my projects, skills, education, and professional experience.
 
-🌐 **Live Now:** *Coming soon on Vercel!*
+🌐 **Live Now:sahanacm.vercel.app
 
 ## ✨ Key Features
 
